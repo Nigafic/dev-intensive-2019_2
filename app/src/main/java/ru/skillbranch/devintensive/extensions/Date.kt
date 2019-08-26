@@ -64,6 +64,7 @@ enum class TimeUnits {
     DAY;
 }
 
+
 private fun getTimeUnit(count: Long, type: Long): String? {
     var newCount = count
     if (newCount > 100) newCount %= 100
@@ -78,3 +79,4 @@ private fun getTimeUnit(count: Long, type: Long): String? {
 private fun getPastOrFuturePhrase(future: Boolean, type: Long, count: Long = 1L): String =
     "${if (future) "через " else "" }${if (count > 1L) "$count " else "" }" +
             "${getTimeUnit(count, type)}${if (!future) " назад" else "" }"
+
